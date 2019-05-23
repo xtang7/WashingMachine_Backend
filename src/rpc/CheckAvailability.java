@@ -17,6 +17,7 @@ import db.DBConnection;
 import db.DBConnectionFactory;
 import db.mysql.MySQLConnection;
 import entity.Machine;
+import logic.LogicHandler;
 
 /**
  * Servlet implementation class CheckAvalibity
@@ -40,6 +41,9 @@ public class CheckAvailability extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		// this is only used for initiate SQL. Not a good way because Java sends error back even SQL is initiated with machines and users. 
+		LogicHandler.startJob("","",""); 
+		
 		System.out.println("Do get in check avail "); 
 		JSONArray array = new JSONArray();
 
